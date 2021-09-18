@@ -1,0 +1,417 @@
+*{
+    font-family: "PortrateOne"; 
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+header{
+    height: 100px;
+    background-color: rgba(243, 104, 11, 0.671);
+}
+.header_logo{
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    cursor: pointer;
+}
+nav{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_nav{
+    margin: 0 auto; 
+    width: 40%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_nav_item{
+    font-size: 24px;
+}
+.header_nav_item a{
+    text-decoration: none;
+    color: white;
+}
+.header_nav_item a:hover{
+    text-decoration: underline;
+}
+.abouUs{
+    max-height: 660px;
+    padding: 50px;
+}
+.aboutUs_wrapper{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.aboutUs_item{
+    display: flex;
+    align-items: center;
+}
+.aboutUs_item img{
+    width: 600px;
+    height: 500px;
+}
+.aboutUs_text{
+    font-size: 24px;
+}
+h1, h2, h3{
+    text-align: center;
+}
+h1{
+    margin-top: 30px;
+}
+.bids{
+    height: 450px;
+    padding: 50px;
+}
+.bids_wrapper{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bids_item img{
+    cursor:pointer;
+    width: 300px;
+    height: 220px;
+}
+.makeBid{
+    height: 240px;
+    padding: 50px;
+    background-color: rgba(243, 104, 11, 0.671);
+}
+.makeBid a{
+    text-decoration: none;
+}
+.button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 80px;
+    width: 300px;
+    height: 100px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    outline: none;
+    border: none;
+}
+.button:hover{
+    background-color: black;
+    color: white;
+    transition: 2s;
+}
+footer{
+    height: 160px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+.footer_wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer_nav{
+    list-style-type: none;
+}
+.footer_nav_item a{
+    text-decoration: none;
+    color: white;
+}
+.footer_nav_item{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.footer_info{
+    text-align: center;
+}
+.phone{
+    margin-top: 10px;
+}
+.address_text{
+    margin-top: 10px;
+}
+.phone_text a{
+    display: block;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+}
+.line{
+    max-width: 1320px;
+    height: 2px;
+    background-color: grey;
+    margin: 0 auto;
+}
+.overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.56);
+    display: none;
+}
+.modalLogin {
+    position: absolute;
+    top: 50%;
+    border-radius: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    min-height: 170px;
+    background-color: #fff;
+    padding: 20px 40px;
+    display: none;
+}
+.modalReg {
+    position: absolute;
+    top: 50%;
+    border-radius: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    min-height: 300px;
+    background-color: #fff;
+    padding: 20px;
+    display: none;
+}
+.loginForm{
+    display: flex;
+    flex-direction: column;
+}
+.loginForm input{
+    font-family: 'Ubuntu-Medium';
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius:5px;
+    outline: none;
+    margin-bottom: 10px;
+    color: black;
+}
+.login_submit{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 40px;
+    border-radius:15px;
+    outline: none;
+    border:none;
+    background-color: orange;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.login_submit:hover{
+    background-color: rgb(255, 115, 0);
+    transition: 1s;
+}
+.login_text a{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 22px;
+    color: black;
+}
+.close{
+    position: absolute;
+    top: -5px;
+    transform: translateY(-30%);
+    right: -40px;
+    font-size: 80px;
+    cursor: pointer;
+    color: orange;
+}
+.regForm{
+    display: flex;
+    flex-direction: column;
+}
+.regForm input{
+    font-family: 'Ubuntu-Medium';
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius:5px;
+    outline: none;
+    margin-bottom: 10px;
+    color: black;
+}
+.add{
+    position: absolute;
+    bottom: 53px;
+    right: 20px;
+}
+.labelAdd{
+    margin-top: 10px;
+    font-family: 'Ubuntu-Medium';
+    font-size: 16px;
+}
+.regForm .login_submit{
+    margin-top: 16px;
+}
+.passnot{
+    display: none;
+    font-family: 'Ubuntu-Medium';
+    text-align: center;
+    color:red;
+}
+.reg_submit{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 200px;
+    height: 40px;
+    border-radius:15px;
+    outline: none;
+    border:none;
+    background-color: orange;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.reg_submit:hover{
+    background-color: rgb(255, 115, 0);
+    transition: 1s;
+}
+.main_admin{
+    padding: 10px;
+    padding-top: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 500px;
+    height: 160px;
+    background-color: grey;
+    border-radius: 15px;
+}
+.admin_title{
+    font-size: 28px;
+    margin-top: 150px;
+}
+.quantity{
+    font-size: 36px;
+    text-align: center;
+    margin-top: 30px;
+}
+.quantity span{
+    color:orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:768px) {
+    .aboutUs_item{
+        flex-direction: column;
+    }
+    .bids_wrapper{
+        flex-wrap: wrap;
+        margin-top: 34px;
+    }
+    .bids_item{
+        margin-top: 40px;
+    }
+    header nav{
+        padding-left: 20px;
+    }
+    .header_nav {
+        width: 60%;
+    }
+    .aboutUs_text{
+        text-align: center;
+    }
+    .aboutUs_item img{
+        display: none;
+    }
+    .bids{
+        height: 700px;
+    }
+    .button{
+        margin-top: 65px;
+    }
+    .line{
+        width: 700px;
+    }
+}
+@font-face {
+    font-family: "PortrateOne"; 
+    src: url("../fonts/PoiretOne-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+@font-face {
+    font-family: 'Ubuntu-Medium';
+    src: url(../fonts/Ubuntu-Medium.ttf) format('truetype');
+    font-style: normal;
+    font-weight: normal;
+} 
