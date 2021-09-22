@@ -82,7 +82,7 @@
     <div class="overlay">
         <div class="container">
             <div class="modalLogin" id="modalLogin">
-                <form action="php/login.php" class="loginForm">
+                <form action="php/login.php" class="loginForm" method="POST">
                     <input name="login" required type="text" placeholder="Введите ваш логин">
                     <input name="pass" required type="password" placeholder="Введите ваш пароль">
                     <button class="login_submit">Войти</button>
@@ -91,10 +91,10 @@
                 <div class="close">&times;</div>
             </div>
             <div class="modalReg" id="modalReg">
-                <form action="php/reg.php" class="regForm">
+                <form action="php/reg.php" class="regForm" method="POST">
                     <input class="fio" name="fio" required type="text" placeholder="Введите ваше ФИО" pattern="^[А-Яа-яЁё\s]+$">
                     <input class="login" name="login" required type="text" placeholder="Введите логин" pattern="^[a-zA-Z]+$">
-                    <input class="e-mail" name="e-mail" required type="email" placeholder="Введите ваш E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                    <input class="e-mail" name="mail" required type="email" placeholder="Введите ваш E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                     <input class="pass" name="pass" required type="password" placeholder="Введите пароль">
                     <input class="passtwo" name="passtwo" required type="password" placeholder="Повторите пароль">
                     <div class="passnot">Пароли не совпадают!</div>

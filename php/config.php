@@ -1,3 +1,3 @@
 <?php
-    $link = mysqli_connect("localhost", "root", "root","designpro");
+    $conn = new mysqli('localhost', 'root', 'root', 'designpro');
 ?>
