@@ -9,8 +9,8 @@ $sql = ("SELECT * FROM users WHERE `login` = '$login' AND `pass` = '$pass'");
 $rez = $conn->query($sql);
 if($rez->num_rows > 0){
     $user = $rez->fetch_assoc();
-    setcookie('user', $user['id'], time() + 3600, "../cabinet");
-    header("Location: ../cabinet/index.html");
+    setcookie('user', $user['id'], time() + 3600, "/");
+    header("Location: ../cabinet");
 }else{
     echo "Такого пользователя нет!";
 }

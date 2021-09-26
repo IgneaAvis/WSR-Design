@@ -7,6 +7,7 @@
 .container{
     max-width: 1320px;
     margin: 0 auto;
+    /* position: relative; */
 }
 
 header{
@@ -305,12 +306,126 @@ footer{
 .quantity span{
     color:orange;
 }
-
-
-
-
-
-
+.lkheader{
+    height: 90px;
+}
+.lkheader_wrap{
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+.exitbtn{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Ubuntu-Medium';
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+.exitbtn:hover{
+    background-color: black;
+    color: #fff;
+    transition: 2s;
+}
+.mybids{
+    min-height: 400px;
+    padding: 50px;
+}
+.mybids .bids_wrapper{
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.mybids .bids_item{
+    margin-bottom: 15px;
+    width: 440px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+.deleteButton{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Ubuntu-Medium';
+    cursor: pointer;
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    background-color: rgb(255, 115, 0);
+    color: #fff;
+}
+.deleteButton:hover{
+    background-color: black;
+    color: #fff;
+    transition: 2s;
+}
+.newbid{
+    padding: 50px;
+    height: 440px;
+    background-color: rgba(243, 104, 11, 0.671);
+}
+.newbid form{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    
+}
+.bidname{
+    padding: 0 10px;
+    margin-bottom: 15px;
+    width: 60%;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Ubuntu-Medium';
+}
+textarea{
+    width: 60%;
+    border-radius:5px;
+    padding: 10px;
+    border: none;
+    font-family: 'Ubuntu-Medium';
+}
+.filein{
+    margin-top: 15px;
+    border: 3px dashed black;
+    font-family: 'Ubuntu-Medium';
+    width: 230px;
+    border-radius: 5px;
+}
+#categ{
+    margin-top: 15px;
+    width: 60%;
+    font-family: 'Ubuntu-Medium';
+    font-size: 20px;
+}
+.categ_labl{
+    font-family: 'Ubuntu-Medium';
+    margin-top: 15px;
+}
+.newbid_btn{
+    font-family: 'Ubuntu-Medium';
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    margin-top: 15px;
+}
+.newbid_btn:hover{
+    background-color: black;
+    color: #fff;
+    transition: 2s;
+}
 
 
 
