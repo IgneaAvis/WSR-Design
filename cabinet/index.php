@@ -36,13 +36,22 @@
 <div class="newbid">
     <div class="container">
         <h2>Создать новую заявку</h2>
-    <form action="" method="POST">
-        <input maxlength="500" required type="text" class="bidname" placeholder="Введите название">
-        <textarea maxlength="10000" name="" id="" cols="30" rows="10" placeholder="Введите описание"></textarea>
+    <form action="../php/makebid.php" method="">
+        <input required type="text" name="bidname1" class="bidname" placeholder="Введите название">
+        <textarea cols="30" rows="10" placeholder="Введите описание" name="biddecr"></textarea>
         <label class="categ_labl" for="categ">Выберите категорию</label>
-        <select id="categ">
-            <option>3D</option>
-            <option>2D</option> 
+        <select id="categ" name="opt">
+        <?php
+            require '../php/config.php';
+            if($conn->connect_error){
+                die("Ошибка: " . $conn->connect_error);
+            }
+            $sql = "SELECT * FROM `categories`";
+            $rez = $conn->query($sql);
+            while ($row = mysqli_fetch_assoc($rez)) {
+                echo "<option>".$row['name']."</option>";
+            }  
+        ?>
         </select>
         <input type="file" name="image" accept="image/*" class="filein"/>
         <button type="submit" class="newbid_btn">Отправить</button>
@@ -50,7 +59,7 @@
     </div>
 </div>
 <?php
-    else: echo "<h2 style='color:red; text-align:center; margin-top:24px;'>Вы ввели неверные данные или </h2>"."<h2 style='color:red;text-align:center;'>Нет такого пользователя!</h2>"."<a href='/'><button class='btn'>Вернуться</button></a>"
+    else: echo "<h2 style='color:red; text-align:center; margin-top:24px;'>Вы ввели неверные данные или </h2>"."<h2 style='color:red;text-align:center;'>Нет такого пользователя!</h2>"."<a href='/'><button class='btn' style='display:block; margin: 0 auto; margin-top: 10px; width: 200px; height: 50px; font-size:24px;'>Вернуться</button></a>"
 ?>
 <?php endif;?>
 <script src="js/script.js"></script>
