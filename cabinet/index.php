@@ -15,7 +15,14 @@
     <div class="container">
         <div class="lkheader_wrap">
             <h2 class="lkheader_title">Личный кабинет</h2>
-            <h2>Гребенкин Константин Викторович</h2>
+            <?php
+                require '../php/config.php';
+                $id = @$_COOKIE['user'];
+                $sql = "SELECT * FROM `users` WHERE `id` = '$id'";
+                $rez = $conn->query($sql);
+                $row = mysqli_fetch_assoc($rez);
+                echo "<h2>".$row['fio']."</h2>"
+                ?>
             <form action="../php/exit.php">
                 <button class="exitbtn">Выход</button>
             </form>
@@ -36,7 +43,7 @@
 <div class="newbid">
     <div class="container">
         <h2>Создать новую заявку</h2>
-    <form action="../php/makebid.php" method="">
+    <form action="../php/makebid.php" method="POST">
         <input required type="text" name="bidname1" class="bidname" placeholder="Введите название">
         <textarea cols="30" rows="10" placeholder="Введите описание" name="biddecr"></textarea>
         <label class="categ_labl" for="categ">Выберите категорию</label>

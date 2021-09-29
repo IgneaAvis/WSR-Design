@@ -10,9 +10,9 @@ $rez = $conn->query($sql);
 if($rez->num_rows > 0){
     $admin = $rez->fetch_assoc();
     setcookie('admin', $admin['id'], time() + 3600, "/");
-    header("Location: ../superadmin/index.html");
+    header("Location: ../superadmin/admin.php");
 }else{
-    echo "Такого пользователя нет!";
+    echo "<h2 style='text-align:center;'>Такого пользователя нет! <br> Или вы ввели неверные данные.</h2>";
 }
 $conn->close();
 ?>
