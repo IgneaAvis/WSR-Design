@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php
-    if(@$_COOKIE['user'] != ''):
+        if(@$_COOKIE['user'] != ''):
     ?>
 <header class="lkheader">
     <div class="container">
@@ -43,12 +43,11 @@
 <div class="newbid">
     <div class="container">
         <h2>Создать новую заявку</h2>
-    <form action="../php/makebid.php" method="POST">
-        <input required type="text" name="bidname1" class="bidname" placeholder="Введите название">
-        <textarea cols="30" rows="10" placeholder="Введите описание" name="biddecr"></textarea>
-        <label class="categ_labl" for="categ">Выберите категорию</label>
-        <select id="categ" name="opt">
-        <?php
+        <form action="../php/makebid.php" method="POST" enctype="multipart/form-data">
+            <input type="text" name="newBidName" class="bidname" placeholder="Введите название">
+            <textarea name="newBidDescr" cols="30" rows="10" placeholder="Введите описание"></textarea>
+            <select id="categ" name="opt">
+            <?php
             require '../php/config.php';
             if($conn->connect_error){
                 die("Ошибка: " . $conn->connect_error);
@@ -60,7 +59,7 @@
             }  
         ?>
         </select>
-        <input type="file" name="image" accept="image/*" class="filein"/>
+        <input type="file" name="myFile" accept="image/*" class="filein"/>
         <button type="submit" class="newbid_btn">Отправить</button>
     </form>
     </div>
@@ -68,7 +67,7 @@
 <?php
     else: echo "<h2 style='color:red; text-align:center; margin-top:24px;'>Вы ввели неверные данные или </h2>"."<h2 style='color:red;text-align:center;'>Нет такого пользователя!</h2>"."<a href='/'><button class='btn' style='display:block; margin: 0 auto; margin-top: 10px; width: 200px; height: 50px; font-size:24px;'>Вернуться</button></a>"
 ?>
-<?php endif;?>
+<?php endif ?>
 <script src="js/script.js"></script>
 </body>
 </html>
