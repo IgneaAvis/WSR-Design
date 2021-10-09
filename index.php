@@ -38,15 +38,24 @@
         <div class="container">
             <h2>Заявки</h2>
             <div class="quantity">
-                <!-- php script -->
-                Количество принятых заявок: <span id="quantityNumber">42</span>
+                <?php
+                    require 'php/config.php';
+                    $sql = "SELECT * FROM `bids` WHERE `id_status` = 2";
+                    $rez = mysqli_query($conn, $sql);
+                    $number = mysqli_num_rows($rez);
+                    echo "Количество заявок в статусе 'Принято в работу': <span id='quantityNumber'>".$number."</span>";
+                ?>
             </div>
             <div class="bids_wrapper">
-                <!-- php script -->
-                <div class="bids_item"><img src="img/1.jpg" alt=""></div>
-                <div class="bids_item"><img src="img/2.jpg" alt=""></div>
-                <div class="bids_item"><img src="img/3.jpg" alt=""></div>
-                <div class="bids_item"><img src="img/4.jpg" alt=""></div>
+                <!-- add php scripts and js scripts -->
+                <?php
+                    require 'php/config.php';
+                    $sql = "SELECT * FROM `bids` WHERE `id_status` = 3 ORDER BY `id` DESC LIMIT 4";
+                    $rez = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_assoc($rez)){
+                        echo "<div class='bids_item'><img src='bidsimg/".$row['image']."'></div>";
+                    }
+                ?>
             </div>
         </div>
     </div>

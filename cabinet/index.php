@@ -32,11 +32,17 @@
 <div class="mybids">
     <div class="container">
         <h2>Ваши заявки</h2>
-         <!-- php script -->
+         <!-- php script and js scripts -->
         <div class="bids_wrapper">
-            <div class="bids_item"><img src="../img/1.jpg" alt=""><button class="deleteButton">Удалить</button></div>
-            <div class="bids_item"><img src="../img/2.jpg" alt=""><button class="deleteButton">Удалить</button></div>
-            <div class="bids_item"><img src="../img/2.jpg" alt=""><button class="deleteButton">Удалить</button></div>
+            <?php
+            $idUser = @$_COOKIE['user'];
+            require '../php/config.php';
+            $sql = "SELECT * FROM `bids` WHERE `id_users` = '$idUser'";
+            $rez = mysqli_query($conn, $sql);
+            while($row = mysqli_fetch_assoc($rez)){
+                echo "<div class='bids_item'><img src='../bidsimg/".$row['image']."' alt=''><a href='../php/delete.php?id=".$row['id']."'><button class='deleteButton'>Удалить</button></a></div>";
+            }
+            ?>
         </div>
     </div>
 </div>

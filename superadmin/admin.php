@@ -30,65 +30,34 @@
         </div>
     </header>
     <div class="allbids">
-        <!-- php script -->
         <div class="container">
-                <div class="allbids_item">
-                    <div class="item_img">
-                        <img src="../img/1.jpg" alt="img">
-                    </div>
-                    <div class="item_text">
-                        <div class="item_title">Lorem, ipsum dolor</div>
-                        <div class="item_decr">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, exercitationem quibusdam veritatis omnis mollitia non facilis necessitatibus ullam, at, inventore laudantium numquam voluptates reiciendis quis debitis natus molestias repellendus ducimus?</div>
-                        <div class="item_status">Новая</div>
-                        <div class="item_time">12.02.2002/12:02</div>
-                    </div>
-                    <div class="allbids_item_buttons">
-                        <form action="">
-                            <button type="submit" class="allbids_item_btn_ch">Сменить статус</button>
-                        </form>
-                        <form action="">
-                            <button type="submit" class="allbids_item_btn_del">Удалить заявку</button>
-                        </form>
-                    </div>
+            <?php
+            require '../php/config.php';
+            $sql = "SELECT * FROM `bids`";
+            $rez = mysqli_query($conn, $sql);
+            while($row = mysqli_fetch_assoc($rez)){
+                $idStat = $row['id_status'];
+                $sql1 = "SELECT * FROM `statuses` WHERE `id` = '$idStat'";
+                $rez1 = mysqli_query($conn, $sql1);
+                echo "<div class='allbids_item'> 
+                <div class='item_img'>
+                    <img src='../bidsimg/".$row['image']."'>
                 </div>
-                <div class="allbids_item">
-                    <div class="item_img">
-                        <img src="../img/1.jpg" alt="img">
-                    </div>
-                    <div class="item_text">
-                        <div class="item_title">Lorem, ipsum dolor</div>
-                        <div class="item_decr">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, exercitationem quibusdam veritatis omnis mollitia non facilis necessitatibus ullam, at, inventore laudantium numquam voluptates reiciendis quis debitis natus molestias repellendus ducimus?</div>
-                        <div class="item_status">Новая</div>
-                        <div class="item_time">12.02.2002/12:02</div>
-                    </div>
-                    <div class="allbids_item_buttons">
-                        <form action="">
-                            <button type="submit" class="allbids_item_btn_ch">Сменить статус</button>
-                        </form>
-                        <form action="">
-                            <button type="submit" class="allbids_item_btn_del">Удалить заявку</button>
-                        </form>
-                    </div>
+                <div class='item_text'>
+                    <div class='item_title'>".$row['name']."</div>
+                    <div class='item_decr'>".$row['descr']."</div>";
+                    while($row1 = mysqli_fetch_assoc($rez1)){
+                        echo"<div class='item_status'>".$row1['name']."</div>";
+                    }
+                    echo"<div class='item_time'>".$row['date']."</div>
                 </div>
-                <div class="allbids_item">
-                    <div class="item_img">
-                        <img src="../img/1.jpg" alt="img">
-                    </div>
-                    <div class="item_text">
-                        <div class="item_title">Lorem, ipsum dolor</div>
-                        <div class="item_decr">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, exercitationem quibusdam veritatis omnis mollitia non facilis necessitatibus ullam, at, inventore laudantium numquam voluptates reiciendis quis debitis natus molestias repellendus ducimus?</div>
-                        <div class="item_status">Новая</div>
-                        <div class="item_time">12.02.2002/12:02</div>
-                    </div>
-                    <div class="allbids_item_buttons">
-                        <form action="">
-                            <button type="submit" class="allbids_item_btn_ch">Сменить статус</button>
-                        </form>
-                        <form action="">
-                            <button type="submit" class="allbids_item_btn_del">Удалить заявку</button>
-                        </form>
-                    </div>
+                <div class='allbids_item_buttons'>
+                    <a href='../php/changeStatus.php?id=".$row['id']."'><button type='submit' class='allbids_item_btn_ch'>Сменить статус</button></a>
+                    <a href='../php/delete.php?id=".$row['id']."'><button type='submit' class='allbids_item_btn_del'>Удалить заявку</button></a>
                 </div>
+            </div>";
+            }
+            ?>
             </div>
     </div>  
     <?php

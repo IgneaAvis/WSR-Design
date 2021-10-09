@@ -77,7 +77,7 @@ h1{
     margin-top: 30px;
 }
 .bids{
-    height: 450px;
+    max-height: 450px;
     padding: 50px;
 }
 .bids_wrapper{
@@ -441,13 +441,8 @@ textarea{
     border: 2px solid black;
     border-radius: 15px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items:center;
-}
-.item_img{
-max-width: 320px;
-max-height: 500px;
-margin-right: 30px;
 }
 .item_img img{
     max-width: 330px;
@@ -476,13 +471,12 @@ margin-right: 30px;
     font-family: 'Ubuntu-Medium';
 }
 .allbids_item_buttons{
-    border: 1px solid black;
-    border-radius: 5px;
     padding: 5px;
     width: 260px;
     height: 110px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
 }
 .allbids_item_buttons button{
@@ -557,10 +551,7 @@ margin-right: 30px;
 
 
 
-@media (max-width:768px) {
-    .aboutUs_item{
-        flex-direction: column;
-    }
+@media only screen and (max-width:854px) {
     .bids_wrapper{
         flex-wrap: wrap;
         margin-top: 34px;
@@ -581,7 +572,7 @@ margin-right: 30px;
         display: none;
     }
     .bids{
-        height: 700px;
+        max-height: 700px;
     }
     .button{
         margin-top: 65px;
